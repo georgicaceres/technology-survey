@@ -28,6 +28,44 @@ function getVote(question, answer) {
   return answerCounter[question][answer] || 0; // When the first value is undefined return the second value
 };
 
+// Graphics
+function loadChart(data, labels, index){
+  $(".container-chart"+index).empty();
+  let canvas=`<canvas id="myChart${index}"></canvas>`
+  $(".container-chart"+index).append(canvas);
+  var ctx = $('.container-chart'+index+' #myChart'+index);
+  var myChart = new Chart(ctx, {
+    type: 'pie',
+    data: {
+      labels: labels,
+      datasets: [{
+        label: '# of Votes',
+        data: data,
+        backgroundColor: ['#E55029','#E5AE29','#BEE529','#60E529','#29E550','#29E5AE'],
+      }]
+    },
+    options: {
+      legend: {
+        display: true,
+        position: 'left',
+        labels: {
+          fontColor: '#333333'
+        }
+      },
+      title: {
+        display: true,
+        fontSize: 14,
+        text: questions[index - 1]
+      },
+      scales: {
+        yAxes: [{
+          display: false,
+        }]
+      }
+    }
+  });
+}
+
 // Submit
 $('form').on('submit', function(event) {
   event.preventDefault();
@@ -54,50 +92,5 @@ $('form').on('submit', function(event) {
       index++;
     });
     $("form").trigger('reset')
-  };  
+  };
 });
-
-// Graphics
-function loadChart(data, labels, index){
-  $(".container-chart"+index).empty();
-  let canvas=`<canvas id="myChart${index}"></canvas>`
-  $(".container-chart"+index).append(canvas);
-  var ctx = $('.container-chart'+index+' #myChart'+index);
-  var myChart = new Chart(ctx, {
-      type: 'pie',
-      data: {
-          labels: labels,
-          datasets: [{
-              label: '# of Votes',
-              data: data,
-              backgroundColor: [
-                  '#E55029',
-                  '#E5AE29',
-                  '#BEE529',
-                  '#60E529',
-                  '#29E550',
-                  '#29E5AE'
-              ],
-          }]
-      },
-      options: {
-        legend: {
-          display: true,
-          position: 'left',
-          labels: {
-            fontColor: '#333333'
-          }
-        },
-        title: {
-          display: true,
-          fontSize: 14,
-          text: questions[index - 1]
-        },
-        scales: {
-          yAxes: [{
-              display: false,
-          }]
-        }
-      }
-  });
-}
