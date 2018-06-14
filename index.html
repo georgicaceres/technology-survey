@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Encuesta</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:500,700" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="./public/stylesheets/style.css">
+</head>
+<body>
+
+	<div class="container">
+		<div class="container-encuesta">
+			<div class="wrap-encuesta">
+
+				<form action="" class="encuesta-form">
+
+          <!-- Title -->
+          <span class="encuesta-form-title">
+						Encuesta de Tecnología
+					</span>
+
+          <!-- First Question (dinamic dropdown) -->
+					<label class="question">1. País de residencia: </label>
+
+					<div class="wrap-input input-select">
+						<div class="styled-select">
+							<select id="countries" name="countries">
+								<option disabled selected>Seleccione una opción</option>
+                <!-- Option will load from json  -->
+							</select>
+						</div>
+						<span class="focus-input"></span>
+					</div>
+
+          <!-- Second Question -->
+					<label class="question">2. Lenguaje de Programación Preferido: </label>
+
+					<div class="wrap-encuesta-form-radio">
+
+						<div class="encuesta-form-radio m-r-42">
+							<input class="input-radio" id="radio1" type="radio" name="language" value="Javascript">
+							<label class="label-radio" for="radio1">Javascript</label>
+						</div>
+
+						<div class="encuesta-form-radio m-r-42">
+							<input class="input-radio" id="radio2" type="radio" name="language" value="Java">
+							<label class="label-radio" for="radio2">
+								Java
+							</label>
+						</div>
+
+						<div class="encuesta-form-radio">
+							<input class="input-radio" id="radio3" type="radio" name="language" value="C#">
+							<label class="label-radio" for="radio3">
+								C#
+							</label>
+						</div>
+
+					</div>
+
+          <!-- Third Question -->
+					<label class="question">3. Sistema Operativo Preferido: </label>
+
+					<div class="wrap-encuesta-form-radio">
+
+						<div class="encuesta-form-radio m-r-42">
+							<input class="input-radio" id="radioSys1" type="radio" name="system" value="Windows">
+							<label class="label-radio" for="radioSys1">
+								Windows
+							</label>
+						</div>
+
+						<div class="encuesta-form-radio m-r-42">
+							<input class="input-radio" id="radioSys2" type="radio" name="system" value="Linux">
+							<label class="label-radio" for="radioSys2">
+								Linux
+							</label>
+						</div>
+
+						<div class="encuesta-form-radio">
+							<input class="input-radio" id="radioSys3" type="radio" name="system" value="Solaris">
+							<label class="label-radio" for="radioSys3">
+								Solaris
+							</label>
+						</div>
+					</div>
+
+          <!-- Fourth Question -->
+					<label class="question">4. Te dedicas profesionalmente a la programación?</label>
+
+					<div class="wrap-encuesta-form-radio">
+
+						<div class="encuesta-form-radio m-r-42">
+							<input class="input-radio" id="radioWork1" type="radio" name="work" value="Empresa">
+							<label class="label-radio" for="radioWork1">
+								Sí, en una empresa
+							</label>
+						</div>
+
+						<div class="encuesta-form-radio m-r-42">
+							<input class="input-radio" id="radioWork2" type="radio" name="work" value="Freelance">
+							<label class="label-radio" for="radioWork2">
+								Sí, como freelance
+							</label>
+						</div>
+
+						<div class="encuesta-form-radio">
+							<input class="input-radio" id="radioWork3" type="radio" name="work" value="No">
+							<label class="label-radio" for="radioWork3">
+								No
+							</label>
+						</div>
+					</div>
+
+          <!-- Fourth Question -->
+					<label class="question">5. Cómo aprendiste a programar? </label>
+
+					<div class="wrap-encuesta-form-radio">
+
+						<div class="encuesta-form-radio m-r-42">
+							<input class="input-radio" id="radioLearn1" type="radio" name="learn" value="Universidad">
+							<label class="label-radio" for="radioLearn1">
+								Universidad
+							</label>
+						</div>
+
+						<div class="encuesta-form-radio m-r-42">
+							<input class="input-radio" id="radioLearn2" type="radio" name="learn" value="Autodidacta">
+							<label class="label-radio" for="radioLearn2">
+								Autodidacta
+							</label>
+						</div>
+
+            <div class="encuesta-form-radio">
+							<input class="input-radio" id="radioLearn3" type="radio" name="learn" value="Cursos no formales">
+							<label class="label-radio" for="radioLearn3">
+								Curso no formal
+							</label>
+						</div>
+
+					</div>
+
+          <!-- Submit Button -->
+					<div class="container-encuesta-form-btn">
+						<input type="submit" class="encuesta-form-btn" value="SUBMIT">
+					</div>
+
+				</form>
+			</div>
+		</div>
+
+		<!-- Graphics -->
+		<div class="container-chart">
+			<div class="container-chart1"></div>
+			<div class="container-chart2"></div>
+			<div class="container-chart3"></div>
+			<div class="container-chart4"></div>
+			<div class="container-chart5"></div>
+		</div>
+
+	</div>
+	<script src="./node_modules/chart.js/dist/chart.js"></script>
+  <script src="./public/javascripts/jquery-3.3.1.min.js"></script>
+  <script src="./public/javascripts/index.js"></script>
+</div>
