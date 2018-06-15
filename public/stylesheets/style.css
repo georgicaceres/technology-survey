@@ -25,9 +25,10 @@ input:focus {
   background-position: center center;
   background-size: cover;
   display: flex;
+	flex-wrap: wrap;
 }
 
-.container-encuesta, .container-chart {
+.container-survey, .container-chart {
   width: 49%;
   min-height: 100vh;
   display: flex;
@@ -37,7 +38,17 @@ input:focus {
   padding: 15px;
 }
 
-.wrap-encuesta {
+@media only screen and (max-width: 800px) {
+	.container-survey, .container-chart {
+		width: 100%;
+	}
+
+	.survey-form-radio {
+		width: 100%;
+	}
+}
+
+.wrap-survey {
   width: 100%;
   background: #80c64a;
   background: linear-gradient(45deg, #56ab2f, #a8e063);
@@ -46,11 +57,11 @@ input:focus {
   padding: 32px 35px 32px 32px;
 }
 
-.encuesta-form {
+.survey-form {
   width: 100%;
 }
 
-.encuesta-form-title {
+.survey-form-title {
   display: block;
   font-family: "Poppins";
   font-weight: bold;
@@ -94,18 +105,18 @@ input:focus {
 option {
   cursor: pointer;
   background-color: #333333;
-  color: #fff
+  color: #fff;
 }
 
 
-.wrap-encuesta {
+.wrap-survey {
   width: 100%;
   position: relative;
   border-bottom: 2px solid rgba(255,255,255,0.24);
   margin-bottom: 27px;
 }
 
-.wrap-encuesta-form-radio {
+.wrap-survey-form-radio {
   display: flex;
   flex-wrap: wrap;
   padding-top: 10px;
@@ -165,7 +176,7 @@ option {
   display: block;
 }
 
-.container-encuesta-form-btn {
+.container-survey-form-btn {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -173,7 +184,7 @@ option {
   width: 100%;
 }
 
-.encuesta-form-btn {
+.survey-form-btn {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -189,7 +200,7 @@ option {
   transition: all 0.4s;
 }
 
-.encuesta-form-btn:hover {
+.survey-form-btn:hover {
   background-color: #fff;
   color: black;
 }
@@ -201,7 +212,7 @@ option {
   pointer-events: none;
 }
 
-.container-encuesta-form-error {
+.container-survey-form-error {
   display: flex;
   justify-content: center;
   width: 100%;

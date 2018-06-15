@@ -64,6 +64,21 @@ function loadChart(data, labels, index){
       }
     }
   });
+};
+
+// Create array with Labels and array with #Votes for use in Charts and call loadCharts
+function createDataForChart(savedQandA) {
+  let index = 1;
+  $.each(savedQandA, function(key, value) {
+    let arrayVotes = [];
+    let arrayLabels =[];
+    $.each(value, function(i, val) {
+      arrayVotes.push(val);
+      arrayLabels.push(i)
+    });
+    loadChart(arrayVotes, arrayLabels, index);
+    index++;
+  });
 }
 
 // Submit
@@ -75,23 +90,14 @@ $('form').on('submit', function(event) {
   let system = $('input[name = "system"]:checked').val();
   let work = $('input[name = "work"]:checked').val();
   let learn = $('input[name = "learn"]:checked').val();
+  // Validate
   if (country && language && system && work && learn) {
     addVote("country", country)
     addVote("language", language);
     addVote("system", system);
     addVote("work", work);
     addVote("learn", learn);
-    let index=1;
-    $.each(answerCounter, function(key, value) {
-      let array = [];
-      let arrayKey=[];
-      $.each(value, function(i, val) {
-        array.push(val);
-        arrayKey.push(i)
-      });
-      loadChart(array, arrayKey,index);
-      index++;
-    });
+    createDataForChart(answerCounter);
     $("form").trigger('reset')
   } else {
     $("#label-obligatorio").html("Debe completar todos los campos.")
