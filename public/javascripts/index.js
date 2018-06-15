@@ -30,6 +30,7 @@ function getVote(question, answer) {
 
 // Submit
 $('form').on('submit', function(event) {
+  $("#label-obligatorio").html("")
   event.preventDefault();
   let country = $('#countries').val();
   let language = $('input[name = "language"]:checked').val();
@@ -54,6 +55,9 @@ $('form').on('submit', function(event) {
       index++;
     });
     $("form").trigger('reset')
+  }
+  else{
+    $("#label-obligatorio").html("Debe completar todos los campos.")
   };  
 });
 
